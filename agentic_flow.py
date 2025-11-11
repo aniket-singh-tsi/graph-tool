@@ -3,10 +3,12 @@ class EmbeddedGraph(BaseModel):
   graph_description = None 
   axes_labels =  None
   axes_units = None
+  
 def graph_localizer(im,graph_localization_strings): -> :EmbeddedGraph
   embedded_graphs = [embedded_graph1,...]
   return embedded_graphs
-def graph_understander():
+
+def graph_understander(graph_ims, embedded_graphs):
   ...
 def graph_localizer_and_understander(im, page_meta_description,graph_localization_strings, question):
   
