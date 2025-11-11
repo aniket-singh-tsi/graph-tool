@@ -1,19 +1,21 @@
 class EmbeddedGraph(BaseModel):
-  coordinates_of_graph = ...
-  ...
+  graph_coordinates =   None
+  graph_description = None 
+  axes_labels =  None
+  axes_units = None
 def graph_localizer(im,graph_localization_strings): -> :EmbeddedGraph
-  coordinates_of_graphs = [coordinates_of_graph1,...]
-  return coordinates_of_graphs
+  embedded_graphs = [embedded_graph1,...]
+  return embedded_graphs
 def graph_understander():
   ...
 def graph_localizer_and_understander(im, page_meta_description,graph_localization_strings, question):
   
   #TODO: do we want to grab multiple graphs? 
-  graph_coordinates, graph_description, axes_labels,axes_units = graph_localizer(im,page_meta_description,graph_localization_strings)
+  embedded_graphs = graph_localizer(im,page_meta_description,graph_localization_strings)
   graph_ims = []
   for graphi_coordinates:
     graph_im = image_cutter(im, graph_coordinates)
-  graph_understander(graph_ims,question,graph_coordinates, graph_description, axes_labels,axes_units)
+  answer = graph_understander(graph_ims,question,graph_coordinates, graph_description, axes_labels,axes_units)
   
 
 
