@@ -17,6 +17,8 @@ def image_cutter(im,coords):
 def place_im_in_labeled_matplotlib(im,xlabels,ylabels):
   ...
   return out_im
+def display_im_with_matplotlib(...):
+  ...
 def graph_localizer(im,graph_localization_strings): -> :EmbeddedGraph
   previous_coordinates = None
   highlighted_from_previous_output = None
@@ -49,21 +51,23 @@ def graph_localizer(im,graph_localization_strings): -> :EmbeddedGraph
     xgrid = ...
     ygrid = ...
     ...
-    
-    
   return embedded_graph
-def graph_manipulator():
+def draw_line()
+def graph_rule_tool(embedded_graph:...,query = {'x':...,'y':...},linewidth = None,linecolor = None):
+  ...
+  return im_with_lines
   
 def graph_understander(graph_ims,graph_descriptions,axes_labels,axes_units,question):
-  
-  ...
+  llm_call = ///
+  graph_querys = ... 
+  while True:
+    ruled_graph = graph_rule_tool(...)  
+    update_query_or_done = llm_call(...ruled_graph...)
+    ...
 def graph_localizer_and_understander(im, page_meta_description,graph_localization_strings, question):
   
   #TODO: do we want to grab multiple graphs? 
   graph_ims,embedded_graphs = [graph_localizer(im,page_meta_description,graph_localization_string) for graph_localization_string in graph_localization_strings]
-  graph_ims = []
-
-    
   answer = graph_understander(graph_ims,question,graph_coordinates, graph_description, axes_labels,axes_units)
   
 
